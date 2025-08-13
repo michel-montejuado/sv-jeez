@@ -1,0 +1,39 @@
+import { Link as RouterLink, useNavigate } from "react-router";
+
+import { useTranslation } from "react-i18next";
+
+import Button from "@mui/material/Button";
+import Container from "@mui/material/Container";
+import Stack from "@mui/material/Stack";
+import Typography from "@mui/material/Typography";
+
+import Logo from "@/components/branding/Logo.tsx";
+import Hero from "@/components/surfaces/Hero.tsx";
+
+import { usePageMetas } from "@/hooks/usePageMetas.ts";
+
+export default function CatchAll() {
+  const { t } = useTranslation();
+  const navigate = useNavigate();
+
+  usePageMetas(t("pages.home.title"), t("pages.home.description"), t("application.name"));
+
+  return (
+    <Container maxWidth="md">
+      <Hero
+        color="primary"
+        actions={
+          <Stack direction="row" spacing={2} justifyContent="center" sx={{ my: 4 }}>
+            <Button variant="contained" color="secondary" component={RouterLink} to="/">{t("pages.home.actions.home")}</Button>
+            <Button variant="outlined" color="secondary" onClick={() => navigate(-1)}>{t("pages.home.actions.previous")}</Button>
+          </Stack>
+        }
+      >
+        <Logo size="lg" />
+        <Typography variant="h3" component="h1" sx={{ textAlign: "center" }}>{t("pages.home.title")}</Typography>
+        <Typography variant="h5" component="h2" sx={{ textAlign: "center" }}>{t("pages.home.description")}</Typography>
+      </Hero>
+      <Typography variant="body1" sx={{ textAlign: "center" }}>{t("pages.home.description")}</Typography>
+    </Container>
+  )
+}
