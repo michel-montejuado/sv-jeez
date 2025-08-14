@@ -11,11 +11,11 @@ import HelpRoundedIcon from "@mui/icons-material/HelpRounded";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 
-import Copyright from "@/components/branding/Copyright.tsx";
 import Logo from "@/components/branding/Logo.tsx";
-import AppBar from "@/components/layout/AppBar.tsx";
-import SideMenu, { type NavigationItem } from "@/components/layout/SideMenu.tsx";
+import Copyright from "@/components/layout/Copyright.tsx";
 import Footer from "@/components/layout/Footer.tsx";
+import AppBar from "@/components/navigation/AppBar.tsx";
+import SideMenu, { type NavigationItem } from "@/components/navigation/SideMenu.tsx";
 import ColorModeIconDropdown from "@/components/theme/ColorModeSelect.tsx";
 
 const primaryNavigation: NavigationItem[] = [
@@ -67,7 +67,6 @@ export default function RootLayout() {
         sideMenu={<SideMenu
           open={drawerOpen}
           toggleDrawer={toggleDrawer}
-          logo={<Logo size="sm" />}
           appName={t("application.name")}
           primaryNavigation={primaryNavigation.map((item) => ({
             text: t(item.text),

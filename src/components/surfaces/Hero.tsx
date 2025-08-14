@@ -1,5 +1,8 @@
 import { type ReactNode } from "react";
 
+import { type Theme } from "@emotion/react";
+import { type SxProps } from "@mui/material";
+
 import Divider from "@mui/material/Divider";
 import Stack from "@mui/material/Stack";
 
@@ -7,9 +10,10 @@ export type HeroProps = {
   color?: string;
   children: ReactNode;
   actions?: ReactNode;
+  sx?: SxProps<Theme>
 };
 
-export default function Hero({ color, children, actions }: HeroProps) {
+export default function Hero({ color, children, actions, sx }: HeroProps) {
   return (
     <Stack
       spacing={2}
@@ -19,7 +23,8 @@ export default function Hero({ color, children, actions }: HeroProps) {
         color: color ? `${color}.contrastText` : "inherit",
         backgroundColor: color ? `${color}.main` : "inherit",
         borderRadius: 4,
-        boxShadow: (theme) => theme.shadows[2]
+        boxShadow: (theme) => theme.shadows[2],
+        ...sx
       }}
     >
       {children}

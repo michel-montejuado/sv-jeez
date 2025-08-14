@@ -22,13 +22,13 @@ export function getSize(size: LogoProps["size"]): {
       };
     case "lg":
       return {
-        width: "4rem",
-        height: "4rem"
+        width: "5rem",
+        height: "5rem"
       };
     case "xl":
       return {
-        width: "5rem",
-        height: "5rem"
+        width: "7rem",
+        height: "7rem"
       };
     default:
       return {

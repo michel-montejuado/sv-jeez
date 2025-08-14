@@ -19,7 +19,6 @@ import Typography from "@mui/material/Typography";
 export type SideMenuProps = {
   open: boolean | undefined;
   toggleDrawer: (newOpen: boolean) => () => void;
-  logo: ReactNode;
   appName: string
   primaryNavigation: NavigationItem[];
   secondaryNavigation: NavigationItem[];
@@ -35,7 +34,6 @@ export type NavigationItem = {
 export default function SideMenu({
   open,
   toggleDrawer,
-  logo,
   appName,
   primaryNavigation,
   secondaryNavigation
@@ -70,7 +68,6 @@ export default function SideMenu({
             to="/"
             onClick={toggleDrawer(false)}
             sx={{ display: "inline-flex", gap: 2, alignItems: "center", textDecoration: "none" }}>
-            {logo}
             <Typography variant="h6" sx={{ color: "primary.main", fontWeight: "bold" }}>
               {appName}
             </Typography>

@@ -21,19 +21,20 @@ export default function CatchAll() {
   return (
     <Container maxWidth="md">
       <Hero
-        color="primary"
         actions={
           <Stack direction="row" spacing={2} justifyContent="center" sx={{ my: 4 }}>
-            <Button variant="contained" color="secondary" component={RouterLink} to="/">{t("pages.home.actions.home")}</Button>
-            <Button variant="outlined" color="secondary" onClick={() => navigate(-1)}>{t("pages.home.actions.previous")}</Button>
+            <Button variant="contained" color="primary" component={RouterLink} to="/">{t("pages.home.actions.home")}</Button>
+            <Button variant="contained" color="secondary" onClick={() => navigate(-1)}>{t("pages.home.actions.previous")}</Button>
           </Stack>
         }
       >
-        <Logo size="lg" />
+        <Logo size="xl" />
         <Typography variant="h3" component="h1" sx={{ textAlign: "center" }}>{t("pages.home.title")}</Typography>
         <Typography variant="h5" component="h2" sx={{ textAlign: "center" }}>{t("pages.home.description")}</Typography>
       </Hero>
-      <Typography variant="body1" sx={{ textAlign: "center" }}>{t("pages.home.description")}</Typography>
+      <Stack direction="column" spacing={2} sx={{ my: 8 }}>
+        <Typography variant="body1" sx={{ textAlign: "center" }}>{t("pages.home.description")}</Typography>
+      </Stack>
     </Container>
   )
 }

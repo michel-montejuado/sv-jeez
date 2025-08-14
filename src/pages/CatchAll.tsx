@@ -19,17 +19,17 @@ export default function CatchAll() {
   usePageMetas(t("pages.catch-all.title"), t("pages.catch-all.description"), t("application.name"));
 
   return (
-    <Container maxWidth="md">
+    <Container maxWidth="md" sx={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>
       <Hero
-        color="primary"
         actions={
           <Stack direction="row" spacing={2} justifyContent="center" sx={{ my: 4 }}>
-            <Button variant="contained" color="secondary" component={RouterLink} to="/">{t("pages.catch-all.actions.home")}</Button>
-            <Button variant="outlined" color="secondary" onClick={() => navigate(-1)}>{t("pages.catch-all.actions.previous")}</Button>
+            <Button variant="contained" color="primary" component={RouterLink} to="/">{t("pages.catch-all.actions.home")}</Button>
+            <Button variant="contained" color="secondary" onClick={() => navigate(-1)}>{t("pages.catch-all.actions.previous")}</Button>
           </Stack>
         }
+        sx={{ textAlign: "center", mt: 24 }}
       >
-        <Logo size="lg" />
+        <Logo size="md" />
         <Typography variant="h3" component="h1" sx={{ textAlign: "center" }}>{t("pages.catch-all.title")}</Typography>
         <Typography variant="h5" component="h2" sx={{ textAlign: "center" }}>{t("pages.catch-all.description")}</Typography>
       </Hero>

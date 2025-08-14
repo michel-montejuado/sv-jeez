@@ -2,25 +2,15 @@ import { createTheme } from "@mui/material/styles";
 
 export default createTheme({
   colorSchemes: {
-    light: {
-      palette: {
-        primary: {
-          main: "#2300beff"
-        },
-        secondary: {
-          main: "#ff00c8ff"
-        }
-      }
+    light: true,
+    dark: true
+  },
+  palette: {
+    primary: {
+      main: "#2300beff"
     },
-    dark: {
-      palette: {
-        primary: {
-          main: "#2300beff"
-        },
-        secondary: {
-          main: "#ff00c8ff"
-        }
-      }
+    secondary: {
+      main: "#ff00c8ff"
     }
   }
 });
