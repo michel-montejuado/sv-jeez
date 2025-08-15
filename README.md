@@ -1,17 +1,21 @@
 # SVJeez
 
-SVJeez is a modern web application starter built with [Deno](https://deno.com/), [Vite](https://vitejs.dev/), and [React](https://react.dev/), featuring Material UI, TypeScript, and i18n support. It provides a clean, scalable foundation for building robust, fast, and maintainable web apps.
+Go Beyond Static. Create Stunning Animated SVGs in Seconds.
+
+SVJeez is the modern toolkit for creating lightweight, production-ready vector images and animations. From mesmerizing waves to morphing blobs, SVJeez lets you generate, animate, and export beautiful SVGs for your website or app—no complex software or code required.
+
+Free, forever. No credit card required.
 
 ## Features
 
-- ⚡ **Vite** for lightning-fast development and builds
-- 🦕 **Deno** runtime with npm compatibility
-- ⚛️ **React 19** with functional components and hooks
-- 🎨 **Material UI** for beautiful, accessible UI
-- 🌗 **Color mode** (light/dark) toggle
-- 🌍 **i18n** with `react-i18next`
-- 🗂️ Modular file structure and aliasing (`@/`)
-- 🧩 Ready-to-extend layout, navigation, and theming
+- 🎨 **Generate Your Perfect Shape**: Start with versatile presets—waves, blobs, circuits, stacked peaks, and more. Use intuitive sliders to customize every detail.
+- ✨ **Bring It to Life**: Apply one-click animation presets like 'Pulse', 'Flow', or 'Morph'. Fine-tune speed and intensity for a custom feel.
+- 🚀 **Export & Deploy Instantly**: Grab highly-optimized SVG code with embedded CSS animations. Copy, paste, and make your site stand out.
+- � **Mesmerizing Hero Backgrounds**: Subtle, looping animations that hook visitors from the first second.
+- � **Dynamic Section Dividers**: Elegant, animated waves and shapes for seamless transitions.
+- �️ **Interactive Icons & Logos**: Add pulsing or morphing effects to icons on hover.
+- 📱 **Engaging Social Media Content**: Export as GIFs or video clips to boost your posts.
+- ⏳ **Unique Loading Indicators**: Replace generic spinners with animated elements that reflect your brand.
 
 ## Getting Started
 
