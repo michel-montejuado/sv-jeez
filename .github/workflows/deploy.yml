@@ -28,15 +28,13 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
 
       - name: Install dependencies
-        run: |
-          npm install -g vite@latest
-          npm install
+        run: deno install --allow-scripts
 
       - name: Build with Vite
-        run: npm run build
+        run: deno task build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
