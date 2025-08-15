@@ -14,7 +14,7 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline enableColorScheme />
-      <BrowserRouter>
+      <BrowserRouter basename="/sv-jeez/">
         <Routes>
           <Route path="" element={<Layout />}>
             <Route index element={<Index />} />
