@@ -1,3 +1,7 @@
+import { type Theme } from "@emotion/react";
+
+import { type SxProps } from "@mui/material";
+
 import { styled } from "@mui/material/styles";
 
 import Paper from "@mui/material/Paper";
@@ -7,6 +11,7 @@ import { getSize, getRadius } from "@/utils/getLogoSizes.ts";
 export type LogoProps = {
   size?: "xs" | "sm" | "md" | "lg" | "xl";
   duration?: number;
+  sx?: SxProps<Theme>
 }
 
 const BasePath = styled("path")({
@@ -81,7 +86,7 @@ const Paths = [
   }
 ]
 
-export default function Logo({ size = "md", duration = 5000 }: LogoProps) {
+export default function Logo({ size = "md", duration = 5000, sx }: LogoProps) {
   return (
     <Paper
       sx={{
@@ -93,7 +98,8 @@ export default function Logo({ size = "md", duration = 5000 }: LogoProps) {
         justifyContent: "center",
         alignItems: "center",
         alignSelf: "center",
-        boxShadow: (theme) => theme.shadows[2]
+        boxShadow: (theme) => theme.shadows[2],
+        ...sx
       }}
     >
       <svg

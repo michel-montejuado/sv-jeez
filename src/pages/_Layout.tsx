@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { Outlet } from "react-router";
+import { Link as RouterLink, Outlet } from "react-router";
 
 import { useTranslation } from "react-i18next";
 
@@ -9,7 +9,13 @@ import InfoRoundedIcon from "@mui/icons-material/InfoRounded";
 import HelpRoundedIcon from "@mui/icons-material/HelpRounded";
 
 import Box from "@mui/material/Box";
+import Chip from "@mui/material/Chip";
 import Container from "@mui/material/Container";
+import Divider from "@mui/material/Divider";
+import Grid from "@mui/material/Grid";
+import Link from "@mui/material/Link";
+import Stack from "@mui/material/Stack";
+import Typography from "@mui/material/Typography";
 
 import Logo from "@/components/branding/Logo.tsx";
 import Copyright from "@/components/layout/Copyright.tsx";
@@ -91,6 +97,43 @@ export default function RootLayout() {
         <Outlet />
       </Box>
       <Footer>
+        <Grid container spacing={8}>
+          <Grid size={{ xs: 12, md: 1 }} sx={{ my: "auto", display: { xs: "flex", md: "block" } }}>
+            <Logo size="lg" sx={{ mx: "auto" }} />
+          </Grid>
+          <Grid size={{ xs: 12, md: 5 }} sx={{ my: "auto", mx: "auto" }}>
+            <Typography variant="body1" sx={{ textAlign: { xs: "center", md: "left" } }}>SVJeez is a free tool dedicated to making the web more vibrant and animated.<br />
+              Create and export stunning SVGs with zero code.</Typography>
+          </Grid>
+          <Grid size={{ xs: 12, md: 2 }}>
+            <Stack direction="column" spacing={2}>
+              <Typography variant="h6" sx={{ textAlign: { xs: "center", md: "left" } }}>Product</Typography>
+              <Link component={RouterLink} to="/" sx={{ textAlign: { xs: "center", md: "left" } }}>Generators</Link>
+              <Link component={RouterLink} to="/" sx={{ textAlign: { xs: "center", md: "left" } }}>Showcase</Link>
+              <Link component={RouterLink} to="/" sx={{ textAlign: { xs: "center", md: "left" } }}>Features</Link>
+              <Link component={RouterLink} to="/" sx={{ textAlign: { xs: "center", md: "left" } }}>Changelog</Link>
+            </Stack>
+          </Grid>
+          <Grid size={{ xs: 12, md: 2 }}>
+            <Stack direction="column" spacing={2}>
+              <Typography variant="h6" sx={{ textAlign: { xs: "center", md: "left" } }}>Resources</Typography>
+              <Link component={RouterLink} to="/" sx={{ textAlign: { xs: "center", md: "left" } }}>Documentation</Link>
+              <Link component={RouterLink} to="/" sx={{ textAlign: { xs: "center", md: "left" } }}>Tutorials</Link>
+              <Link component={RouterLink} to="/" sx={{ textAlign: { xs: "center", md: "left" } }}>Blog</Link>
+              <Link component={RouterLink} to="/" sx={{ textAlign: { xs: "center", md: "left" } }}>FAQs</Link>
+            </Stack>
+          </Grid>
+          <Grid size={{ xs: 12, md: 2 }}>
+            <Stack direction="column" spacing={2}>
+              <Typography variant="h6" sx={{ textAlign: { xs: "center", md: "left" } }}>Community</Typography>
+              <Link component={RouterLink} to="/" sx={{ textAlign: { xs: "center", md: "left" } }}>GitHub</Link>
+              <Link component={RouterLink} to="/" sx={{ textAlign: { xs: "center", md: "left" } }}>Discord</Link>
+            </Stack>
+          </Grid>
+        </Grid>
+        <Divider sx={{ mt: 8, mb: 2 }}>
+          <Chip label="Made with ❤️ in Nougaroulet, France." size="small" />
+        </Divider>
         <Copyright
           copyrightText={t("application.copyright.text")}
           logo={<Logo size="xs" />}

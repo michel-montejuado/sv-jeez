@@ -2,6 +2,8 @@ import { Link as RouterLink, useNavigate } from "react-router";
 
 import { useTranslation } from "react-i18next";
 
+import { alpha } from "@mui/material/styles";
+
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
 import Stack from "@mui/material/Stack";
@@ -21,13 +23,18 @@ export default function CatchAll() {
   return (
     <Container maxWidth="md" sx={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>
       <Hero
-        actions={
+        cta={
           <Stack direction="row" spacing={2} justifyContent="center" sx={{ my: 4 }}>
             <Button variant="contained" color="primary" component={RouterLink} to="/">{t("pages.catch-all.actions.home")}</Button>
             <Button variant="contained" color="secondary" onClick={() => navigate(-1)}>{t("pages.catch-all.actions.previous")}</Button>
           </Stack>
         }
-        sx={{ textAlign: "center", mt: 24 }}
+        sx={{
+          textAlign: "center",
+          my: 20,
+          color: "primary.contrastText",
+          backgroundImage: (theme) => `linear-gradient(${alpha(theme.palette.primary.main, 0.6)}, ${alpha(theme.palette.secondary.main, 0.6)}),url('https://picsum.photos/seed/404/1600/900')`,
+        }}
       >
         <Logo size="md" />
         <Typography variant="h3" component="h1" sx={{ textAlign: "center" }}>{t("pages.catch-all.title")}</Typography>

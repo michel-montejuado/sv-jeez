@@ -7,7 +7,6 @@ import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import Divider from "@mui/material/Divider";
 import Drawer, { drawerClasses } from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
-import Link from "@mui/material/Link";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
@@ -59,19 +58,18 @@ export default function SideMenu({
       >
         <Stack
           direction="row"
-          sx={{ px: 2, py: 2, gap: 3, alignItems: "center" }}>
+          sx={{ px: 2, py: 2, gap: 4, alignItems: "center" }}>
           <IconButton onClick={toggleDrawer(false)}>
             <CloseRoundedIcon />
           </IconButton>
-          <Link
+          <Typography
+            variant="h6"
             component={RouterLink}
             to="/"
             onClick={toggleDrawer(false)}
-            sx={{ display: "inline-flex", gap: 2, alignItems: "center", textDecoration: "none" }}>
-            <Typography variant="h6" sx={{ color: "primary.main", fontWeight: "bold" }}>
-              {appName}
-            </Typography>
-          </Link>
+            sx={{ color: "primary.main", fontWeight: "bold", textDecoration: "none" }}>
+            {appName}
+          </Typography>
         </Stack>
         <Divider />
         <Stack sx={{ flexGrow: 1 }}>

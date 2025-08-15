@@ -9,17 +9,20 @@ import Stack from "@mui/material/Stack";
 export type HeroProps = {
   color?: string;
   children: ReactNode;
-  actions?: ReactNode;
+  cta?: ReactNode;
   sx?: SxProps<Theme>
 };
 
-export default function Hero({ color, children, actions, sx }: HeroProps) {
+export default function Hero({ color, children, cta, sx }: HeroProps) {
   return (
     <Stack
       spacing={2}
       sx={{
         my: 2,
         p: 3,
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
         color: color ? `${color}.contrastText` : "inherit",
         backgroundColor: color ? `${color}.main` : "inherit",
         borderRadius: 4,
@@ -29,11 +32,11 @@ export default function Hero({ color, children, actions, sx }: HeroProps) {
     >
       {children}
       {
-        actions && (
+        cta && (
           <>
             <Divider />
             <Stack direction="row" spacing={2} justifyContent="center" sx={{ my: 4 }}>
-              {actions}
+              {cta}
             </Stack>
           </>
         )

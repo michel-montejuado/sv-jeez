@@ -27,7 +27,6 @@ export default function Copyright({
     <Box
       sx={{
         mx: "auto",
-        p: 2,
         display: "flex",
         flexDirection: {
           xs: "column",

@@ -11,6 +11,7 @@ export default function Footer({ children }: FooterProps) {
     <Box
       component="footer"
       sx={{
+        p: 4,
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
