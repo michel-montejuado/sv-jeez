@@ -1,20 +1,16 @@
-import { ReactNode, ElementType } from "react";
+import { ReactNode } from "react";
 
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
+import MuiCardMedia from "@mui/material/CardMedia";
 import Divider from "@mui/material/Divider";
 import Typography from "@mui/material/Typography";
 
-export type SimpleCardMedia = {
-  component?: ElementType;
-  image?: string;
-  alt?: string;
-};
+import { type CardMedia } from "@/types/CardMedia.ts";
 
 export type SimpleCardProps = {
-  media?: SimpleCardMedia;
+  media?: CardMedia;
   title: string;
   description: string;
   children?: ReactNode;
@@ -30,7 +26,7 @@ export default function SimpleCard({ media, title, description, children, action
       }}
     >
       {media &&
-        <CardMedia
+        <MuiCardMedia
           component={media.component ? media.component : "img"}
           height="128"
           image={media.image}

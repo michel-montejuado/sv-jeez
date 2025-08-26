@@ -8,8 +8,6 @@ import LayersRoundedIcon from '@mui/icons-material/LayersRounded';
 import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
 import HourglassBottomRoundedIcon from '@mui/icons-material/HourglassBottomRounded';
 
-import { alpha } from "@mui/material/styles";
-
 import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import List from '@mui/material/List';
@@ -19,28 +17,29 @@ import ListItemText from '@mui/material/ListItemText';
 import Typography from "@mui/material/Typography";
 
 import Logo from "@/components/branding/Logo.tsx";
-import PageLayout from "@/components/layout/PageLayout.tsx";
+import PageBlankLayout from "@/components/layout/PageBlankLayout.tsx";
 import PageSection from "@/components/layout/PageSection.tsx";
-import Card from "@/components/surfaces/Card.tsx";
+import SimpleCard from "../components/surfaces/SimpleCard.tsx";
 import Carousel from "@/components/surfaces/Carousel.tsx";
 import Hero from "@/components/surfaces/Hero.tsx";
 
-import { usePageMetas } from "@/hooks/usePageMetas.ts";
+import gradient from "@/theme/gradient.ts";
 
-export default function CatchAll() {
+export default function Home() {
   const { t } = useTranslation();
-  // const navigate = useNavigate();
-
-  usePageMetas(t("pages.home.title"), t("pages.home.description"), t("application.name"));
 
   return (
-    <PageLayout>
+    <PageBlankLayout
+      appName={t("application.name")}
+      title={t("pages.home.title")}
+      description={t("pages.home.description")}
+    >
       <Hero
         sx={{
           textAlign: "center",
           my: { xs: 4, md: 20 },
           color: "primary.contrastText",
-          backgroundImage: (theme) => `linear-gradient(${alpha(theme.palette.primary.main, 0.6)}, ${alpha(theme.palette.secondary.main, 0.6)}),url('https://picsum.photos/seed/index/1600/900')`
+          backgroundImage: gradient
         }}
       >
         <Logo size="xl" />
@@ -50,10 +49,10 @@ export default function CatchAll() {
           From mesmerizing waves to morphing blobs, SVJeez is the modern toolkit for creating lightweight, production-ready vector images and animations.<br />
           No complex software. No lines of code. Just pure creativity.
         </Typography>
-        <Typography variant="h5" sx={{ mb: 4, textAlign: "center" }}>
+        <Typography variant="h5" component="p" sx={{ mb: 4, textAlign: "center" }}>
           Free, forever. No credit card required.
         </Typography>
-        <Button variant="contained" color="primary" component={RouterLink} to="/" sx={{ mx: "auto", mb: 4, width: "fit-content" }}>Start Creating</Button>
+        <Button variant="contained" color="primary" component={RouterLink} to="/generators" sx={{ mx: "auto", mb: 4, width: "fit-content" }}>Start Creating</Button>
         <Typography variant="body2" sx={{ textAlign: "center" }}>
           Supports all modern browsers.<br />
           Loved by developers and designers.
@@ -98,7 +97,7 @@ export default function CatchAll() {
                 md: 4
               }}
             >
-              <Card
+              <SimpleCard
                 media={feature.media}
                 title={feature.title}
                 description={feature.description}
@@ -184,7 +183,7 @@ export default function CatchAll() {
               }
             }
           ].map((feature, index) => (
-            <Card
+            <SimpleCard
               key={index}
               media={feature.media}
               title={feature.title}
@@ -199,6 +198,6 @@ export default function CatchAll() {
         </Typography>
         <Button variant="contained" color="primary" component={RouterLink} to="/" sx={{ mx: "auto", mt: 4, width: "fit-content", textAlign: "center" }}>Launch the Generator and Create Your First Animation</Button>
       </PageSection>
-    </PageLayout>
+    </PageBlankLayout>
   )
 }

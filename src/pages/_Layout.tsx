@@ -4,9 +4,10 @@ import { Link as RouterLink, Outlet } from "react-router";
 
 import { useTranslation } from "react-i18next";
 
-import SettingsRoundedIcon from "@mui/icons-material/SettingsRounded";
+import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import InfoRoundedIcon from "@mui/icons-material/InfoRounded";
 import HelpRoundedIcon from "@mui/icons-material/HelpRounded";
+import SettingsRoundedIcon from "@mui/icons-material/SettingsRounded";
 
 import Box from "@mui/material/Box";
 import Chip from "@mui/material/Chip";
@@ -17,14 +18,22 @@ import Link from "@mui/material/Link";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 
+import { type NavigationItem } from "@/types/NavigationItem.ts";
+
 import Logo from "@/components/branding/Logo.tsx";
 import Copyright from "@/components/layout/Copyright.tsx";
 import Footer from "@/components/layout/Footer.tsx";
 import AppBar from "@/components/navigation/AppBar.tsx";
-import SideMenu, { type NavigationItem } from "@/components/navigation/SideMenu.tsx";
+import SideMenu from "@/components/navigation/SideMenu.tsx";
 import ColorModeIconDropdown from "@/components/theme/ColorModeSelect.tsx";
 
 const primaryNavigation: NavigationItem[] = [
+  {
+    text: "navigation.primary.generators.text",
+    description: "navigation.primary.generators.description",
+    icon: <AutoAwesomeIcon />,
+    to: "/generators"
+  },
 ];
 
 const secondaryNavigation: NavigationItem[] = [
@@ -109,8 +118,8 @@ export default function RootLayout() {
             <Stack direction="column" spacing={2}>
               <Typography variant="h6" sx={{ textAlign: { xs: "center", md: "left" } }}>Product</Typography>
               <Link component={RouterLink} to="/" sx={{ textAlign: { xs: "center", md: "left" } }}>Generators</Link>
-              <Link component={RouterLink} to="/" sx={{ textAlign: { xs: "center", md: "left" } }}>Showcase</Link>
-              <Link component={RouterLink} to="/" sx={{ textAlign: { xs: "center", md: "left" } }}>Features</Link>
+              <Link component={RouterLink} to="/" sx={{ textAlign: { xs: "center", md: "left" } }}>About</Link>
+              <Link component={RouterLink} to="/" sx={{ textAlign: { xs: "center", md: "left" } }}>Feedback</Link>
               <Link component={RouterLink} to="/" sx={{ textAlign: { xs: "center", md: "left" } }}>Changelog</Link>
             </Stack>
           </Grid>
@@ -127,7 +136,6 @@ export default function RootLayout() {
             <Stack direction="column" spacing={2}>
               <Typography variant="h6" sx={{ textAlign: { xs: "center", md: "left" } }}>Community</Typography>
               <Link component={RouterLink} to="/" sx={{ textAlign: { xs: "center", md: "left" } }}>GitHub</Link>
-              <Link component={RouterLink} to="/" sx={{ textAlign: { xs: "center", md: "left" } }}>Discord</Link>
             </Stack>
           </Grid>
         </Grid>

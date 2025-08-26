@@ -1,5 +1,3 @@
-import { type ReactNode } from "react";
-
 import { Link as RouterLink, useLocation, useMatch } from "react-router";
 
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
@@ -15,19 +13,14 @@ import ListItemText from "@mui/material/ListItemText";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 
+import { type NavigationItem } from "@/types/NavigationItem.ts";
+
 export type SideMenuProps = {
   open: boolean | undefined;
   toggleDrawer: (newOpen: boolean) => () => void;
   appName: string
   primaryNavigation: NavigationItem[];
   secondaryNavigation: NavigationItem[];
-}
-
-export type NavigationItem = {
-  text: string;
-  description: string;
-  icon: ReactNode;
-  to: string;
 }
 
 export default function SideMenu({
